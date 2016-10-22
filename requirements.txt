@@ -1,0 +1,5 @@
+numpy==1.11.2
+protobuf==3.0.0b2
+python-midi==0.2.4
+tensorflow==0.10.0rc0
+wheel==0.29.0

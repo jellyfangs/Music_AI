@@ -1,19 +1,64 @@
-#This file is heavily based on Daniel Johnson's midi manipulation code in https://github.com/hexahedria/biaxial-rnn-music-composition
+ #
+ #  COMPUTER GENERATED MUSIC
+ #
+ #
+ #                  .-.
+ #                 (   )
+ #                  '-'
+ #                  J L
+ #                  | |
+ #                 J   L
+ #                 |   |
+ #                J     L
+ #              .-'.___.'-.
+ #             /___________\
+ #        _.-""'           `bmw._
+ #      .'                       `.
+ #    J                            `.
+ #   F                               L
+ #  J                                 J
+ # J                                  `
+ # |                                   L
+ # |                                   |
+ # |                                   |
+ # |                                   J
+ # |                                    L
+ # |                                    |
+ # |             ,.___          ___....--._
+ # |           ,'     `""""""""'           `-._
+ # |          J           _____________________`-.
+ # |         F         .-'   `-88888-'    `Y8888b.`.
+ # |         |       .'         `P'         `88888b \
+ # |         |      J       #     L      #    q8888b L
+ # |         |      |             |           )8888D )
+ # |         J      \             J           d8888P P
+ # |          L      `.         .b.         ,88888P /
+ # |           `.      `-.___,o88888o.___,o88888P'.'
+ # |             `-.__________________________..-'
+ # |                                    |
+ # |         .-----.........____________J
+ # |       .' |       |      |       |
+ # |      J---|-----..|...___|_______|
+ # |      |   |       |      |       |
+ # |      Y---|-----..|...___|_______|
+ # |       `. |       |      |       |
+ # |         `'-------:....__|______.J
+ # |                                  |
+ #  L___                              |
+ #      """----...______________....--'
 
 import numpy as np
 import pandas as pd
-import msgpack
+import msgpack 
 import glob
 import tensorflow as tf
 from tensorflow.python.ops import control_flow_ops
 from tqdm import tqdm
 
-###################################################
-# In order for this code to work, you need to place this file in the same 
-# directory as the midi_manipulation.py file and the Pop_Music_Midi directory
-
+# load plugins
 import midi_manipulation
 
+# load midis and convert to msgpack
 def get_songs(path):
     files = glob.glob('{}/*.mid*'.format(path))
     songs = []
@@ -26,8 +71,10 @@ def get_songs(path):
             raise e           
     return songs
 
-songs = get_songs('Pop_Music_Midi') #These songs have already been converted from midi to msgpack
+songs = get_songs('Pop_Music_Midi')
 print "{} songs processed".format(len(songs))
+
+
 ###################################################
 
 ### HyperParameters
