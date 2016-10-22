@@ -1,4 +1,13 @@
-*.pyc
-*.mid
 *.swp
 .DS_Store
+
+### MUSIC
+*.mid
+
+### PYTHON
+
+.Python
+*.pyc
+bin/
+include/
+lib/
